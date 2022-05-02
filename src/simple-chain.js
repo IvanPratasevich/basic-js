@@ -19,12 +19,12 @@ const chainMaker = {
     }
   },
   removeLink(position) {
-    if (position > 0 && typeof position === 'number' && Number.isInteger(position) && position < this.chain.length && position == this.chain.length) {
+    if (position > 0 && typeof position === 'number' && Number.isInteger(position) && position < this.chain.length) {
       this.chain.splice(position - 1, 1);
       return this;
     } else {
       this.chain = [];
-      throw new NotImplementedError("You can't remove incorrect link!");
+      throw new Error("You can't remove incorrect link!");
     }
   },
   reverseChain() {
